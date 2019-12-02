@@ -1,46 +1,34 @@
 {
-  "name": "express-reference-server",
+  "name": "minimize-backend",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "jest": "jest --runInBand",
-    "test": "npm run jest -- --coverage",
-    "test:watch": "npm run jest -- --watchAll",
-    "test:verbose": "npm run test -- --verbose",
+    "test": "jest --verbose --runInBand",
+    "test:watch": "npm run test -- --watch",
     "start": "node server.js",
-    "start:watch": "nodemon server.js",
-    "load:cats": "mongoimport --db famous-cats --collection cats --drop --jsonArray --file ./data/cats.json"
+    "start:watch": "nodemon server.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^8.1.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.7.1",
-    "morgan": "^1.9.1"
-  },
   "devDependencies": {
-    "@shelf/jest-mongodb": "^1.1.1",
-    "eslint": "^6.4.0",
+    "@types/jest": "^24.0.23",
+    "eslint": "^6.7.2",
     "jest": "^24.9.0",
-    "nodemon": "^1.19.2",
-    "prettier": "^1.18.2",
+    "nodemon": "^2.0.1",
     "supertest": "^4.0.2"
   },
-  "jest": {
-    "preset": "@shelf/jest-mongodb",
-    "setupFilesAfterEnv": [
-      "<rootDir>/e2e/setup.js"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.13"
   }
 }
